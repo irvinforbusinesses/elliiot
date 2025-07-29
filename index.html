@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Elliot Brady | Ball MGMT Talent</title>
-  <link rel="icon" href="https://github.com/irvinforbusinesses/elliiot/blob/main/assets/icono.png?raw=true" type="image/png">
+  <link rel="icon" href="https://github.com/irvinforbusinesses/elliiot/blob/main/assets/icon.png?raw=true" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet" />
   <style>
     body {
@@ -38,15 +38,14 @@
       margin: 1rem 0;
     }
 
-    .carousel-track {
-      display: flex;
-      width: max-content;
-      height: 300px;
-      gap: 10px;
-    }
-
+   .carousel-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
     .carousel-item {
       min-width: 150px;
+      margin: 0 5px;
       flex-shrink: 0;
       cursor: pointer;
     }
@@ -64,6 +63,26 @@
       opacity: 0.65;
     }
 
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    @keyframes float-glow {
+      0% {
+        transform: translateY(0);
+        filter: brightness(1);
+      }
+      50% {
+        transform: translateY(-4px);
+        filter: brightness(1.15);
+      }
+      100% {
+        transform: translateY(0);
+        filter: brightness(1);
+      }
+    }
+
     .buttons {
       text-align: center;
       margin: 2rem 0;
@@ -79,6 +98,8 @@
       border-radius: 8px;
       transition: transform 0.3s, background 0.3s;
       font-weight: 600;
+      animation: float-glow 3.5s ease-in-out infinite;
+      display: inline-block;
     }
 
     .buttons a:hover {
@@ -103,6 +124,8 @@
       height: 40px;
       filter: brightness(0) invert(1);
       transition: transform 0.3s;
+      animation: float-glow 3.5s ease-in-out infinite;
+      display: inline-block;
     }
 
     .social-icons img:hover {
@@ -152,6 +175,11 @@
       line-height: 40px;
       text-align: center;
       user-select: none;
+      transition: background 0.3s;
+    }
+
+    .lightbox .close:hover {
+      background: rgba(255,255,255,0.3);
     }
 
     footer p {
@@ -171,6 +199,7 @@
       font-family: 'Poppins', sans-serif;
       letter-spacing: 0.03em;
       user-select: none;
+      transition: background-color 0.3s;
     }
 
     footer#promo-footer:hover {
@@ -180,6 +209,7 @@
     @media (min-width: 601px) {
       .carousel-item {
         min-width: 210px;
+        margin: 0 7px;
       }
       .carousel-track {
         height: 420px;
@@ -201,18 +231,18 @@
 
       .carousel-item {
         min-width: 224px;
+        margin: 0 4.2px;
       }
 
-      .buttons a {
-        display: block;
-        width: 70%;
-        max-width: 320px;
-        margin: 0.5rem auto;
-        text-align: center;
-        padding: 0.85rem;
-        font-size: 1rem;
-      }
-
+ .buttons a {
+  display: block;
+  width: 70%;
+  max-width: 320px;
+  margin: 0.5rem auto;
+  text-align: center;
+  padding: 0.85rem;
+  font-size: 1rem;
+}
       .social-icons img {
         width: 30px;
         height: 30px;
@@ -225,36 +255,37 @@
   <h2>Elliot Brady</h2>
 
   <div class="carousel-container">
-    <div class="carousel-track auto-carousel" id="carousel1"></div>
+    <div class="carousel-track" id="carousel1"></div>
   </div>
 
   <div class="buttons" id="buttons-main">
-    <a href="https://www.emma-sleep.co.uk/sale/?utm_source=instagram&utm_medium=influencer&utm_campaign=elliott_brady&utm_code=ELLIOTT5">Emma Sleep💫</a>
-    <a href="https://stylist.social/Elliott_brady">Clothes Links 👓</a>
-    <a href="https://www.paypal.me/elliottbrady?locale.x=en_GB">Paypal Me ❤️</a>
-    <a href="https://www.spotlight.com/5899-6724-3611">For Castings🎭</a>
-    <a href="mailto:Elliott_brady@hotmail.com">My email for businesses🧑‍💼</a>
+    <a href="https://www.emma-sleep.co.uk/sale/?utm_source=instagram&utm_medium=influencer&utm_campaign=elliott_brady&utm_code=ELLIOTT5" aria-label="Get a discount on Emma Sleep">Emma Sleep💫</a>
+    <a href="https://stylist.social/Elliott_brady" aria-label="Clothes Links">Clothes Links 👓</a>
+    <a href="https://www.paypal.me/elliottbrady?locale.x=en_GB" aria-label="Paypal me">Paypal Me ❤️</a>
+    <a href="https://www.spotlight.com/5899-6724-3611" aria-label="For Castigs">For Castings🎭</a>
+    <a href="mailto:Elliott_brady@hotmail.com" aria-label="Email me for business inquiries">My email for businesses🧑‍💼</a>
   </div>
 
   <div class="social-icons">
-    <a href="https://tiktok.com/@elliottbrady1" target="_blank">
+    <a href="https://tiktok.com/@elliottbrady1" target="_blank" aria-label="TikTok profile">
       <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok">
     </a>
-    <a href="https://instagram.com/elliott_brady" target="_blank">
+    <a href="https://instagram.com/elliott_brady" target="_blank" aria-label="Instagram profile">
       <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram">
     </a>
   </div>
 
   <div class="carousel-container">
-    <div class="carousel-track auto-carousel" id="carousel2"></div>
+    <div class="carousel-track" id="carousel2"></div>
   </div>
 
   <div class="lightbox" id="lightbox" style="display:none">
     <div class="lightbox-content" id="lightbox-content"></div>
-    <span class="close" onclick="closeLightbox()">✕</span>
+    <span class="close" onclick="closeLightbox()" aria-label="Close lightbox">✕</span>
   </div>
 
-  <footer id="promo-footer" onclick="window.open('https://www.ballmgmt.co.uk/', '_blank')">
+  <footer id="promo-footer" onclick="window.open('https://www.ballmgmt.co.uk/', '_blank')"
+    role="link" tabindex="0" onkeypress="if(event.key==='Enter'){this.click();}">
     Represented by Ball MGMT Talent - Click here to join us!
   </footer>
 
@@ -275,7 +306,8 @@
       'https://github.com/irvinforbusinesses/elliiot/blob/main/assets/Photo3.jpg?raw=true',
       'https://github.com/irvinforbusinesses/elliiot/blob/main/assets/Photo4.jpg?raw=true',
       'https://github.com/irvinforbusinesses/elliiot/blob/main/assets/Photo5.jpg?raw=true',
-      'https://github.com/irvinforbusinesses/elliiot/blob/main/assets/Photo7.jpg?raw=true'
+      'https://github.com/irvinforbusinesses/elliiot/blob/main/assets/Photo7.jpg?raw=true',
+      
     ];
 
     function shuffle(array) {
@@ -286,15 +318,17 @@
       return array;
     }
 
-    function createCarouselItems(imgs, videos = []) {
+    function createCarouselItems(container, imgs, isBlurred = false, videos = []) {
       const fragment = document.createDocumentFragment();
       let videoIndex = 0;
+
       imgs.forEach((img, i) => {
         const item = document.createElement('div');
         item.className = 'carousel-item';
         item.innerHTML = `<img src="${img}" onclick="openLightbox('${img}', false)">`;
         fragment.appendChild(item);
-        if ((i + 1) % 2 === 0 && videoIndex < videos.length) {
+
+        if (!isBlurred && (i + 1) % 2 === 0 && videoIndex < videos.length) {
           const video = document.createElement('div');
           video.className = 'carousel-item';
           video.innerHTML = `<video autoplay loop muted playsinline onclick="openLightbox('${videos[videoIndex]}', true)">
@@ -304,37 +338,36 @@
           videoIndex++;
         }
       });
-      return fragment;
-    }
 
-    function setupCarousel(carousel) {
-      const shuffled = shuffle([...images]);
-      const content = createCarouselItems(shuffled, videos);
-      carousel.appendChild(content.cloneNode(true)); // original
-      carousel.appendChild(content.cloneNode(true)); // clone for loop
+      imgs.forEach((img, i) => {
+        const item = document.createElement('div');
+        item.className = 'carousel-item';
+        item.innerHTML = `<img src="${img}" onclick="openLightbox('${img}', false)">`;
+        fragment.appendChild(item);
 
-      const totalWidth = carousel.scrollWidth / 2;
-      let scrollLeft = 0;
-      const speed = window.innerWidth <= 768 ? 1.2 : 1.5;
-
-      function step() {
-        scrollLeft += speed;
-        if (scrollLeft >= totalWidth) scrollLeft = 0;
-        carousel.scrollLeft = scrollLeft;
-        requestAnimationFrame(step);
-      }
-
-      const imgs = carousel.querySelectorAll('img');
-      let loaded = 0;
-      imgs.forEach(img => {
-        img.onload = () => {
-          loaded++;
-          if (loaded === imgs.length) requestAnimationFrame(step);
-        };
+        if (!isBlurred && (i + 1) % 2 === 0 && videoIndex < videos.length * 2) {
+          const videoIdx = videoIndex - videos.length;
+          if (videoIdx < videos.length) {
+            const video = document.createElement('div');
+            video.className = 'carousel-item';
+            video.innerHTML = `<video autoplay loop muted playsinline onclick="openLightbox('${videos[videoIdx]}', true)">
+                                 <source src="${videos[videoIdx]}" type="video/mp4">
+                               </video>`;
+            fragment.appendChild(video);
+            videoIndex++;
+          }
+        }
       });
+
+      container.appendChild(fragment);
     }
 
-    document.querySelectorAll('.auto-carousel').forEach(setupCarousel);
+    const carousel1 = document.getElementById('carousel1');
+    const carousel2 = document.getElementById('carousel2');
+    const shuffledNormal = shuffle([...images]);
+
+    createCarouselItems(carousel1, shuffledNormal, false, videos);
+    createCarouselItems(carousel2, shuffledNormal, false, videos);
 
     function openLightbox(src, isVideo = false) {
       const lightbox = document.getElementById('lightbox');
@@ -349,6 +382,12 @@
       document.getElementById('lightbox').style.display = 'none';
       document.getElementById('lightbox-content').innerHTML = '';
     }
+    window.addEventListener('load', () => {
+  const tracks = document.querySelectorAll('.carousel-track');
+  tracks.forEach(track => {
+    track.style.animation = 'scroll 18s linear infinite';
+  });
+});
   </script>
 </body>
 </html>
